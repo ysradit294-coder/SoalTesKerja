@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Analyst's Gauntlet - Tes Kerja</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="app-container">
+
+        <div id="start-screen" class="screen active">
+            <h1>️Tes Kerja</h1>
+            <p>Selamat datang, Analis. Uji kemampuan logikamu dalam tantangan 5 menit ini.</p>
+            <form id="participant-form">
+                <label for="name">Nama Lengkap:</label>
+                <input type="text" id="name" required placeholder="Cth: Elon Musk">
+
+                <label for="class">Posisi/Kelas Tes:</label>
+                <input type="text" id="class" required placeholder="Cth: Data Scientist">
+
+                <button type="submit" class="btn-neon">Lanjut ke Peraturan</button>
+            </form>
+        </div>
+
+        <div id="rules-screen" class="screen">
+            <h2>📜 Peraturan Pengerjaan 📜</h2>
+            <div class="rules-list">
+                <p>1. Jumlah Soal: Kamu akan menghadapi 30 soal acak.</p>
+                <p>2. Alokasi Waktu:
+                 Total waktu pengerjaan adalah 5 menit (300 detik).</p>
+                <p>3. Sistem Poin: Setiap jawaban benar bernilai +1.</p>
+                <p>4. Integritas Tes: Jika kamu keluar (menutup tab/browser), atau beralih fokus, tes akan otomatis SELESAI.</p>
+                <p>5. Hasil: Skor akan dihitung dan direkap otomatis ke database.</p>
+            </div>
+            <button id="start-quiz-btn" class="btn-neon">Mulai Sekarang!</button>
+        </div>
+
+        <div id="quiz-screen" class="screen">
+            <div id="header-info">
+                <div id="timer-display" class="neon-text">05:00</div>
+                <div id="question-counter">Soal <span id="current-q">1</span> dari 30</div>
+            </div>
+            <div id="question-area">
+                <h3 id="question-text">Loading Soal...</h3>
+                <div id="options-container" class="options-grid">
+                    </div>
+            </div>
+            <button id="next-btn" class="btn-neon hidden">Soal Selanjutnya &rarr;</button>
+        </div>
+
+        <div id="result-screen" class="screen">
+            <h2>🎉 Hasil Ujian 🎉</h2>
+            <div class="result-detail">
+                <p>Nama Peserta: <span id="res-name" class="neon-text"></span></p>
+                <p>Posisi/Kelas: <span id="res-class" class="neon-text"></span></p>
+                <p>Skor Akhir: <span id="final-score" class="neon-text"></span> / 30</p>
+                <p>Status: <span id="res-status"></span></p>
+                <p id="submission-status" class="submitting-text">Mengirim hasil ke database...</p>
+            </div>
+            <button id="restart-btn" class="btn-neon">Ulangi Tes</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
